@@ -19,6 +19,7 @@ public class HomePageObject {
 
 	}
 	public boolean logiIsDisplayed() {
+		System.out.println("homePage"+driver);
 		return logoElement.isDisplayed();
 	}
 

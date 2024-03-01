@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.sanemi.mauzocrm.testScripts.HomePageTestScript">
+      <class name="com.qa.testScripts.HomePageTestScript">
         <methods>
+          <include name="logodisplayed"/>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="logodisplayed"/>
         </methods>
-      </class> <!-- com.sanemi.mauzocrm.testScripts.HomePageTestScript -->
+      </class> <!-- com.qa.testScripts.HomePageTestScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

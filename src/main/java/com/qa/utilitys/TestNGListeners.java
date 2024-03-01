@@ -12,7 +12,7 @@ public class TestNGListeners implements ITestListener {
 	 private DriverFactory driverFactory;
 	 // Constructor to receive DriverFactory instance
 	    public TestNGListeners(DriverFactory driverFactory) {
-	        this.driverFactory = driverFactory;
+	        this.driverFactory = DriverFactory.getInstance();
 	    }
 
 	@Override
@@ -22,7 +22,8 @@ public class TestNGListeners implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-
+		 
+     System.out.println(result.getStatus());
 	}
 
 	@Override
