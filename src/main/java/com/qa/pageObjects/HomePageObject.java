@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.qa.driverInstance.DriverFactory;
 
 public class HomePageObject {
-	@FindBy (xpath="//a[@href='https://classic.freecrm.com/index.html']")
+	@FindBy (xpath="//a[@href='https://classic.freecrm.c/index.html']")
 	private WebElement logoElement;
 	private WebDriver driver;
 	private DriverFactory driverFactory;

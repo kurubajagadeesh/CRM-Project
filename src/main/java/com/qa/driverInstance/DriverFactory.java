@@ -13,7 +13,8 @@ public class DriverFactory {
 
     private DriverFactory() {
         // Private constructor to prevent instantiation outside of the class
-    } public static DriverFactory getInstance() {
+    }
+    public static DriverFactory getInstance() {
         if (instance == null) {
             instance = new DriverFactory();
         }

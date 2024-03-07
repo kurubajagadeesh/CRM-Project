@@ -50,16 +50,18 @@ public class Elementutils {
 	        }
 	    }
 	    public static void captureScreenshot(WebDriver driver, String testName) {
+	    	System.out.println("element "+driver);
 	        try {
-	            if (driver instanceof TakesScreenshot) {
+	            if (driver !=null) {
 	                TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
 	                File screenshotFile = screenshotDriver.getScreenshotAs(OutputType.FILE);
 
 	                String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 	                String screenshotName = testName + "_" + timestamp + ".png";
 
-	                Path destinationPath = Path.of("screenshots", screenshotName);
-	                Files.copy(screenshotFile.toPath(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
+	                Path destinationPath = Path.of("./ScreenShot", screenshotName);
+	                System.out.println("path "+destinationPath);
+	                Files.copy(screenshotFile.toPath(), destinationPath);
 
 	                System.out.println("Screenshot captured: " + destinationPath.toAbsolutePath());
 	                // Log the screenshot file path for reference in test reports
