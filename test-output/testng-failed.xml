@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qa.testScripts.HomePageTestScript">
         <methods>
-          <include name="logodisplayed"/>
+          <include name="logoLocation"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>

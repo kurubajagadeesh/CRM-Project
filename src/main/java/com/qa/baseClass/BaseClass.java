@@ -7,12 +7,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.qa.driverInstance.DriverFactory;
+import com.qa.pageObjects.LoginPage;
 import com.qa.utilitys.PropertiesLoader;
 
 public class BaseClass {
 	protected WebDriver driver;
 	protected DriverFactory driverFactory;
 	private Properties prop;
+	 
 	 // Initialize driverFactory and prop, either through constructor or setters
     public BaseClass() {
         driverFactory = DriverFactory.getInstance();
@@ -27,6 +29,7 @@ public class BaseClass {
 	        } catch (Exception e) {
 	            e.printStackTrace(); // Handle the exception according to your requirements
 	        }
+		     
 
 	}
 	@AfterMethod

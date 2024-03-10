@@ -11,24 +11,33 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.qa.baseClass.BaseClass;
-import com.qa.pageObjects.HomePageObject;
+import com.qa.pageObjects.LoginPage;
 import com.qa.utilitys.TestNGListeners;
 
  @Listeners(TestNGListeners.class)
-public class HomePageTestScript extends BaseClass {
+public class LoginPageTestScript extends BaseClass {
 
-	HomePageObject hob;
+	LoginPage hob;
+	
 	 
 	 
 	@Test
 	public void logodisplayed() throws IOException {
-		hob=new HomePageObject(driverFactory);
-		 
+		hob=new LoginPage(driverFactory);
 		            
 		System.out.println("script object "+driver);
 		Assert.assertTrue(hob.logiIsDisplayed());
-		
-		 
+	  
+	}
+	@Test
+	public void logoLocation() {
+		hob=new LoginPage(driverFactory);
+		hob.logoIsdisplayedAtTopLeftcorner();
+	}
+	@Test
+	public void logoCaptured() throws IOException {
+		hob=new LoginPage(driverFactory);
+		hob.logoImageComparision();
 	}
 
 }
