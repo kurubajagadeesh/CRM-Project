@@ -2,9 +2,11 @@ package com.qa.pageObjects;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +21,13 @@ import ru.yandex.qatools.ashot.Screenshot;
 public class LoginPage {
 	@FindBy (xpath="//img[@src='https://classic.freecrm.com/img/logo.png']")
 	private WebElement logoElement;
+	@FindBy (xpath="//div[@id='navbar-collapse']")
+	private WebElement navbar;
+	
+	
+	By modules= By.xpath("//ul[@class='nav navbar-nav navbar-right']//li");
+	  
+	 
 	private WebDriver driver;
 	private DriverFactory driverFactory;
 
@@ -63,6 +72,21 @@ public class LoginPage {
 //			System.out.println("image not captured");
 //		}
 	 }
-	 //
+	 //navbar
+	 public void navbar() {
+		 
+		 navbar.isDisplayed();
+		 navbar.click();
+		System.out.println( "navbar_x points "+navbar.getRect().getX());
+		System.err.println( "navbar_y points "+navbar.getRect().getY());
+	 }
+	 //navbar modules
+	 public void navbaraModules() {
+		 List<WebElement> nav_modules = driver.findElements( modules);
+		 for(WebElement feature:nav_modules) {
+			 System.err.println("number of features "+feature.getText());
+		 }
+		
+	 }
 
 }

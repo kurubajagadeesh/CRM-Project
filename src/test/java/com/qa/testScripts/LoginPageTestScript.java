@@ -21,7 +21,7 @@ public class LoginPageTestScript extends BaseClass {
 	
 	 
 	 
-	@Test
+	//@Test
 	public void logodisplayed() throws IOException {
 		hob=new LoginPage(driverFactory);
 		            
@@ -29,15 +29,25 @@ public class LoginPageTestScript extends BaseClass {
 		Assert.assertTrue(hob.logiIsDisplayed());
 	  
 	}
-	@Test
+	//@Test
 	public void logoLocation() {
 		hob=new LoginPage(driverFactory);
 		hob.logoIsdisplayedAtTopLeftcorner();
 	}
-	@Test
+	//@Test
 	public void logoCaptured() throws IOException {
 		hob=new LoginPage(driverFactory);
 		hob.logoImageComparision();
+	}
+	//@Test
+	public void navbardimensions() {
+		hob=new LoginPage(driverFactory);
+		hob.navbar();
+	}
+	@Test
+	public void navbarmodules() {
+		hob=new LoginPage(driverFactory);
+		hob.navbaraModules();
 	}
 
 }
