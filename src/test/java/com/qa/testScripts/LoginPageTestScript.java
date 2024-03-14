@@ -1,11 +1,9 @@
 package com.qa.testScripts;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -47,7 +45,10 @@ public class LoginPageTestScript extends BaseClass {
 	@Test
 	public void navbarmodules() {
 		hob=new LoginPage(driverFactory);
-		hob.navbaraModules();
+		List<String> names=hob.navbaraModules();
+		System.out.println(names);
+		List<String> expected_names=new ArrayList<String>(List.of("Home", "Sign Up", "Pricing", "Features", "Customers", "Contact"));
+		Assert.assertEquals(names, expected_names);
 	}
 
 }

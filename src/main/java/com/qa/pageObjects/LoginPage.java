@@ -2,6 +2,7 @@ package com.qa.pageObjects;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -81,11 +82,13 @@ public class LoginPage {
 		System.err.println( "navbar_y points "+navbar.getRect().getY());
 	 }
 	 //navbar modules
-	 public void navbaraModules() {
+	 public List<String> navbaraModules() {
+		 List<String> l_elements=new ArrayList<String>();
 		 List<WebElement> nav_modules = driver.findElements( modules);
 		 for(WebElement feature:nav_modules) {
-			 System.err.println("number of features "+feature.getText());
+			  l_elements.add(feature.getText());
 		 }
+		 return l_elements;
 		
 	 }
 
