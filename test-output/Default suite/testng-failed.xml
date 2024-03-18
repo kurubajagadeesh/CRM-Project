@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qa.testScripts.LoginPageTestScript">
         <methods>
-          <include name="navbarmodules"/>
+          <include name="login"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>

@@ -25,6 +25,14 @@ public class LoginPage {
 	@FindBy (xpath="//div[@id='navbar-collapse']")
 	private WebElement navbar;
 	
+	@FindBy (xpath="//input[@name='username']")
+	private WebElement login_username;
+	@FindBy (xpath="//input[@name='password']")
+	private WebElement login_password;
+
+	@FindBy (xpath=" //input[@type='submit']")
+	private WebElement login_button;
+	
 	
 	By modules= By.xpath("//ul[@class='nav navbar-nav navbar-right']//li");
 	  
@@ -90,6 +98,14 @@ public class LoginPage {
 		 }
 		 return l_elements;
 		
+	 }
+	 //login
+	 public  HomePageObject user_loginPageObject(String username, String password) {
+		 login_username.sendKeys(username);
+		 login_password.sendKeys(password);
+		 login_button.click();
+		 return new HomePageObject();
+		 
 	 }
 
 }

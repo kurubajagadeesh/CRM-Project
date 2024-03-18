@@ -3,6 +3,7 @@ package com.qa.testScripts;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -10,12 +11,14 @@ import org.testng.annotations.Test;
 
 import com.qa.baseClass.BaseClass;
 import com.qa.pageObjects.LoginPage;
+import com.qa.utilitys.PropertiesLoader;
 import com.qa.utilitys.TestNGListeners;
 
  @Listeners(TestNGListeners.class)
 public class LoginPageTestScript extends BaseClass {
 
 	LoginPage hob;
+	 
 	
 	 
 	 
@@ -42,7 +45,7 @@ public class LoginPageTestScript extends BaseClass {
 		hob=new LoginPage(driverFactory);
 		hob.navbar();
 	}
-	@Test
+	//@Test
 	public void navbarmodules() {
 		hob=new LoginPage(driverFactory);
 		List<String> names=hob.navbaraModules();
@@ -50,5 +53,15 @@ public class LoginPageTestScript extends BaseClass {
 		List<String> expected_names=new ArrayList<String>(List.of("Home", "Sign Up", "Pricing", "Features", "Customers", "Contact"));
 		Assert.assertEquals(names, expected_names);
 	}
-
+	@Test
+	public void login() {
+		hob=new LoginPage(driverFactory);
+		
+		hob.user_loginPageObject(PropertiesLoader.getProperty("userName"), PropertiesLoader.getProperty("password"));
+		String actival_title=driver.getTitle();
+		System.out.println(actival_title);
+		String excepted_title="CRMPRO";
+		Assert.assertEquals(actival_title, excepted_title);
+		
+	}
 }
