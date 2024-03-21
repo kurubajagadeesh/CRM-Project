@@ -60,7 +60,7 @@ public class Elementutils {
 	                String screenshotName = testName + "_" + timestamp + ".png";
 
 	                Path destinationPath = Path.of("./ScreenShot", screenshotName);
-	                System.out.println("path "+destinationPath);
+	                 
 	                Files.copy(screenshotFile.toPath(), destinationPath);
 
 	                System.out.println("Screenshot captured: " + destinationPath.toAbsolutePath());

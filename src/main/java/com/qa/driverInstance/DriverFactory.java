@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 	private static DriverFactory instance;
-    private  WebDriver driver;
+    private static  WebDriver driver;
 
     private DriverFactory() {
         // Private constructor to prevent instantiation outside of the class
@@ -20,7 +20,7 @@ public class DriverFactory {
         }
         return instance;
     }
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 
@@ -46,11 +46,7 @@ public class DriverFactory {
                     break;
             }
 
-            if (driver != null) {
-                driver.get(prop.getProperty("url"));
-                driver.manage().deleteAllCookies();
-                driver.manage().window().maximize();
-            }
+             
         }
 
         return driver;

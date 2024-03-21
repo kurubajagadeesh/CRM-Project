@@ -38,10 +38,10 @@ public class LoginPage {
 	  
 	 
 	private WebDriver driver;
-	private DriverFactory driverFactory;
+	 
 
-	public LoginPage(DriverFactory driverFactory) {
-		this.driver=driverFactory.getDriver();
+	public LoginPage(WebDriver driver) {
+		this.driver=driver;
 		PageFactory.initElements(this.driver,this);
 
 	}
@@ -104,7 +104,7 @@ public class LoginPage {
 		 login_username.sendKeys(username);
 		 login_password.sendKeys(password);
 		 login_button.click();
-		 return new HomePageObject();
+		 return new HomePageObject(driver);
 		 
 	 }
 
