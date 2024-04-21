@@ -1,14 +1,12 @@
  # Selenium Framework
  This is a test framework which uses Selenium for browser automation uses other dependencies:
 
-TestNG - used for testing framework
-Selenium API
-Apache Commons
-Jackson
-Extent Reports
-Maven
-Maven profiling integration
-Java
+1. TestNG - used for testing framework
+2. Selenium API
+3. Apache Commons
+4. Extent Reports
+5. Maven
+6. Java
 Setup for framework - uses Page Object Model for Design Pattern
 
 Each page for the application has its class (pages package)
